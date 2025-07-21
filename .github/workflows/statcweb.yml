@@ -14,7 +14,7 @@ jobs:
           aws-region: ap-south-1
       - name: static code depoly to s3
         run: |
-          aws s3 sync ./ s3://5319-my-static-web-demo\ /
+          aws s3 sync ./ s3://5319-my-static-web-demo/ --delete --acl public-read \
           --exclude "*" \
           --inculde "index.html"
         
