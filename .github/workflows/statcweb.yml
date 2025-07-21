@@ -1,0 +1,16 @@
+name: Deploye static web
+on: push
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: check out code
+        uses: actions/checkout@v4
+      - name: config aws cerdentioals
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.aws-access-key-id}}
+          aws-secret-access-key: ${{ secrets.aws-secret-access-key}}
+      
+      
+  
